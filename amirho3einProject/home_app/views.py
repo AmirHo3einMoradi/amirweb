@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from project_app.models import Project
 
 
-template_name = 'home_app\index.html'
 def home(request):
-    return render(request, template_name, {})
+    projects = Project.objects.all()
+    return render(request, 'home_app/index.html', context={'projects': projects})
