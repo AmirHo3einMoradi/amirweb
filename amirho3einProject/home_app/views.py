@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from project_app.models import Project
 from contactus_app.models import Info, Message
+from service_app.models import Services
 
 
 def home(request):
@@ -12,5 +13,6 @@ def home(request):
 
     projects = Project.objects.all()
     info = Info.objects.all().last()
+    service = Services.objects.all()
 
-    return render(request, 'home_app/index.html', context={'projects': projects, 'info': info})
+    return render(request, 'home_app/index.html', context={'projects': projects, 'info': info, 'service': service})
