@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'home_app',
     'project_app',
     'contactus_app',
+    'service_app'
 
 ]
 
